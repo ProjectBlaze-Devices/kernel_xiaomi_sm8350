@@ -1758,7 +1758,7 @@ static int battery_psy_get_prop(struct power_supply *psy,
 
 		break;
 	case POWER_SUPPLY_PROP_TEMP:
-#if defined(CONFIG_BQ_FUEL_GAUGE)
+#ifdef CONFIG_BQ_FUEL_GAUGE
 		pval->intval = pst->prop[prop_id];
 		pval->intval = pval->intval / 10;
 #else
